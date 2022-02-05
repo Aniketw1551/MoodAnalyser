@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using MoodAnalyser;
-
 
 namespace UnitTestProject1
 {
@@ -14,7 +12,10 @@ namespace UnitTestProject1
         {
             ///AAA Methodology
             ///Arrange
+           
+            //giving string value to message
             string message = "I am in Happy mood";
+            //giving expected result to variable
             string expected = "happy";
             MoodAnalyser1 moodAnalyser = new MoodAnalyser1(message);
 
@@ -22,16 +23,19 @@ namespace UnitTestProject1
             string actual = moodAnalyser.AnalyseMood();
 
             //Assert
+            //comparing expected and actual values
             Assert.AreEqual(expected, actual);
         }
-
         [TestMethod]
         [TestCategory("Sad Mood")]
         public void GivenSadMessageReturnSadMood()
         {
             ///AAA Methodology
             ///Arrange
+            
+            //giving string value to message
             string message = "I am in Sad mood";
+            //giving expected result to variable
             string expected = "sad";
             MoodAnalyser1 moodAnalyser = new MoodAnalyser1(message);
 
@@ -39,6 +43,26 @@ namespace UnitTestProject1
             string actual = moodAnalyser.AnalyseMood();
 
             //Assert
+            //comparing expected and actual values
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [TestCategory("Null case")]
+        public void GivenNullMessageReturnHappyMood()
+        {
+            ///AAA Methodology
+            ///Arrange
+            //giving string value to message
+            string message = null;
+            //giving expected result to variable
+            string expected = "happy";
+            MoodAnalyser1 moodAnalyser = new MoodAnalyser1(message);
+
+            //Act
+            string actual = moodAnalyser.AnalyseMood();
+
+            //Assert
+            //comparing expected and actual values
             Assert.AreEqual(expected, actual);
         }
     }
