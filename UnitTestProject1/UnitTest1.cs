@@ -87,14 +87,14 @@ namespace UnitTestProject1
             {
                 //Assert
                 //comparing expected and actual values
-                Console.WriteLine("Custom: "+ex);
+                Console.WriteLine("Custom: " + ex);
                 Assert.AreEqual(expected, ex.Message);
             }
             catch (Exception ex)
             {
                 //Assert
                 //comparing expected and actual values
-                Console.WriteLine("Custom: "+ex);
+                Console.WriteLine("Custom: " + ex);
                 Assert.AreEqual(expected, ex.Message);
             }
         }
@@ -119,14 +119,53 @@ namespace UnitTestProject1
             {
                 //Assert
                 //comparing expected and actual values
-                Console.WriteLine("Custom: "+ex);
+                Console.WriteLine("Custom: " + ex);
                 Assert.AreEqual(expected, ex.Message);
             }
             catch (Exception ex)
             {
                 //Assert
                 //comparing expected and actual values
-                Console.WriteLine("Custom: "+ex);
+                Console.WriteLine("Custom: " + ex);
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+        [TestMethod]
+        [TestCategory("Invalid class Name")]
+        public void GivenInvalidClassNameShouldThrowMoodAnalyserException()
+        {
+            ///AAA Methodology 
+           
+            //giving expected value to variable 
+            string expected = "Class is not Found";
+            try
+            {
+                //creating instence of class 
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseMethod("MoodAnalyser.MoodAnalyzer", "MoodAnalyzer");
+            }
+            catch (CustomMoodAnalyserException ex)
+            {
+                //comparing and catching exception
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("Invalid cunstructor")]
+        public void GivenClassWhenInvalidConstructorShouldThrowMoodAnalyserException()
+        {
+            ///AAA Methodology 
+            
+            //giving expected value to variable 
+            string expected = "Constructor is not Found";
+            try
+            {
+                //creating instence of class 
+                object obj = MoodAnalyserFactory.CreateMoodAnalyseMethod("MoodAnalyser.MoodAnalyzer", "MoodAnalyzer");
+            }
+            catch (CustomMoodAnalyserException ex)
+            {
+                //comparing and catching exception
                 Assert.AreEqual(expected, ex.Message);
             }
         }
