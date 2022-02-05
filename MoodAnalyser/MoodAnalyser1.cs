@@ -22,6 +22,10 @@ namespace MoodAnalyser
                 {
                     return "happy";
                 }
+                else if (message.Equals(string.Empty))
+                {
+                    throw new CustomMoodAnalyserException(CustomMoodAnalyserException.ExceptionType.EMPTY_EXCEPTION, "Message should not be Empty");
+                }
                 else
                 {
                     return "sad";
@@ -29,8 +33,15 @@ namespace MoodAnalyser
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine(ex.Message);
-                return "happy";
+                Console.WriteLine("default exception: " +ex);
+                //return "happy";
+                throw new CustomMoodAnalyserException(CustomMoodAnalyserException.ExceptionType.NULL_EXCEPTION, "Message should not be Null");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("default exception: " +ex);
+                //return "happy";
+                throw new CustomMoodAnalyserException(CustomMoodAnalyserException.ExceptionType.NULL_EXCEPTION, "Message should not be Null");
             }
         }
     }
