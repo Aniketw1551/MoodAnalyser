@@ -181,7 +181,7 @@ namespace UnitTestProject1
         // Given Invalid class name should throw CustomMoodAnalyserException.
         [TestMethod]
         [TestCategory("class with invalid parameterised")]
-        public void GivenInvalidClassName_ShouldThrow_MoodAnalyserException_Of_ParameterisedConstructor()
+        public void GivenInvalidClassNameShouldThrowMoodAnalyserExceptionOfParameterisedConstructor()
         {
             string expected = "Class not found";
             try
@@ -196,7 +196,7 @@ namespace UnitTestProject1
         // Given Invalid constructor name should throw CustomMoodAnalyserException        
         [TestMethod]
         [TestCategory("constructor with invalid parameterised")]
-        public void GivenInvalidConstructorName_ShouldThrow_MoodAnalyserException_Of_ParameterizedConstructor()
+        public void GivenInvalidConstructorNameShouldThrowMoodAnalyserExceptionOfParameterizedConstructor()
         {
             string expected = "Constructor is not found";
             try
